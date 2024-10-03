@@ -10,7 +10,7 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p class="mt-3">氏名1</p>
+        <p class="mt-3">氏名 2</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
         </div>
@@ -36,7 +36,6 @@
             
             if (liff.isInClient())
             {
-
               const liffId = "2006413273-80Yr0MJq";
               initializeLiff(liffId);
             }
@@ -51,10 +50,9 @@
                   .then((profile) => {
                     const id = profile.userid;
                     const name = profile.displayName;
+                    $('input[name="userid"]').val(id);
+                    $('input[name="name"]').val(name);
                   });
-                $('input[name="userid"]').val(id);
-                $('input[name="name"]').val(name);
-                
             }).catch((err) => {
               $('input[name="name"]').val(err);
             });
