@@ -56,8 +56,7 @@
                 $('input[name="name"]').val(name);
                 
             }).catch((err) => {
-              $('input[name="name"]').val("Error");
-                console.log('LIFF Initialization failed ', err);
+              $('input[name="name"]').val(err);
             });
         }
 
