@@ -34,6 +34,7 @@
 
         $(document).ready(function () {
             var json = $.parseURL();
+            alert(json.query.member_id);
             $('form').append('<p>member_id = ' + json.query.membeer_id + '</p>');
             $('form').append('<p>shop_id = ' + json.query.shop_id + '</p>');
             
