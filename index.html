@@ -67,9 +67,11 @@
                     $('input[name="userid"]').val(id);
                     $('input[name="name"]').val(name);  
                   });
-                const accessToken = liff.getAccessToken();
-                alert(accessToken);
-                $('form').append('<p>accessToken = ' + accessToken + '</p>');
+                liff
+                  .getAccessToken()
+                  .then((accessToken) => {
+                     $('form').append('<p>accessToken = ' + accessToken + '</p>');
+                  });
             }).catch((err) => {
               $('input[name="name"]').val(err);
             });
