@@ -42,8 +42,8 @@
         }
         
         $(document).ready(function () {
-            const member_id = getParam('member_id');
-            const shop_id = getParam('shop_id');
+            const member_id = getParam('member_id', null);
+            const shop_id = getParam('shop_id', null);
             $('form').append('<p>member_id = ' + member_id + '</p>');
             $('form').append('<p>shop_id = ' + shop_id + '</p>');
             
