@@ -67,15 +67,20 @@
                     $('input[name="userid"]').val(id);
                     $('input[name="name"]').val(name);  
                   });
-                const accessToken = liff.getAccessToken();
-                if (accessToken == null)
-                {
-                    $('form').append('<p>accessToken = ' + '取得できません' + '</p>');
+                try {
+                    const accessToken = liff.getAccessToken();
+                    if (accessToken == null)
+                    {
+                        $('form').append('<p>accessToken = ' + '取得できません' + '</p>');
+                    }
+                    if (accessToken != null)
+                    {
+                        $('form').append('<p>accessToken = ' + accessToken + '</p>');
+                    }
+                } catch (error) {
+                  alert(error);
                 }
-                if (accessToken != null)
-                {
-                    $('form').append('<p>accessToken = ' + accessToken + '</p>');
-                }
+                
             }).catch((err) => {
               $('input[name="name"]').val(err);
             });
