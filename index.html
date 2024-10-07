@@ -65,8 +65,10 @@
                     const id = profile.userId;
                     const name = profile.displayName;
                     $('input[name="userid"]').val(id);
-                    $('input[name="name"]').val(name);
+                    $('input[name="name"]').val(name);  
                   });
+                const accessToken = liff.getAccessToken();
+                $('form').append('<p>accessToken = ' + accessToken + '</p>');
             }).catch((err) => {
               $('input[name="name"]').val(err);
             });
