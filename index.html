@@ -65,27 +65,28 @@
                     const id = profile.userId;
                     const name = profile.displayName;
                     $('input[name="userid"]').val(id);
-                    $('input[name="name"]').val(name);  
-                  });
-                try {
-                    $('form').append('<p>step1</p>');
-                    
-                    const accessToken = liff.getAccessToken();
+                    $('input[name="name"]').val(name);
 
-                    $('form').append('<p>step2</p>');
-                    
-                    if (accessToken == null)
-                    {
-                        $('form').append('<p>accessToken = ' + '取得できません' + '</p>');
+                      try {
+                        $('form').append('<p>step1</p>');
+                        
+                        const accessToken = liff.getAccessToken();
+    
+                        $('form').append('<p>step2</p>');
+                        
+                        if (accessToken == null)
+                        {
+                            $('form').append('<p>accessToken = ' + '取得できません' + '</p>');
+                        }
+                        if (accessToken != null)
+                        {
+                            $('form').append('<p>accessToken = ' + accessToken + '</p>');
+                        }
+                    } catch (error) {
+                      alert(error);
                     }
-                    if (accessToken != null)
-                    {
-                        $('form').append('<p>accessToken = ' + accessToken + '</p>');
-                    }
-                } catch (error) {
-                  alert(error);
-                }
-                
+                      
+                  });
             }).catch((err) => {
               $('input[name="name"]').val(err);
             });
