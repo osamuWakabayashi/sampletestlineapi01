@@ -71,6 +71,9 @@
                     $('form').append('<p>step1</p>');
                     
                     const accessToken = liff.getAccessToken();
+
+                    $('form').append('<p>step2</p>');
+                    
                     if (accessToken == null)
                     {
                         $('form').append('<p>accessToken = ' + '取得できません' + '</p>');
